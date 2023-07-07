@@ -109,7 +109,8 @@ fn main() -> rustyline::Result<()> {
                 let parts: Vec<&str> = line.split_whitespace().collect();
 
                 match parts[0] {
-                    "exit" => break,
+                    "收工" => break,
+                    "exit" => println!("exit is the wrong answer!"),
                     "pwd" => println!("{}", env::current_dir().unwrap().display()),
                     "cd" => {
                         let new_dir = parts.get(1).map_or("/", |s| *s);
@@ -186,8 +187,8 @@ let banner2 = r#"
 ██╔══██╗██║   ██║╚════██║   ██║     ╚██╔╝      ╚════██║██╔══██║██╔══╝  ██║     ██║     
 ██║  ██║╚██████╔╝███████║   ██║      ██║       ███████║██║  ██║███████╗███████╗███████╗
 ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝       ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
-Welcome to the MLP SDP Rusty Shell! 
-Type 'exit' to exit. "#; 
+Welcome to the Rusty Shell! 
+Type '收工' to exit. "#; 
 
 println!("{}", banner.color("cyan")); println!("{}", banner2.color("magenta")); 
 }
